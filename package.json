@@ -12,7 +12,14 @@
     "compile": "npx projen compile",
     "default": "npx projen default",
     "docgen": "npx projen docgen",
+    "eject": "npx projen eject",
     "eslint": "npx projen eslint",
+    "integ:index:assert": "npx projen integ:index:assert",
+    "integ:index:deploy": "npx projen integ:index:deploy",
+    "integ:index:destroy": "npx projen integ:index:destroy",
+    "integ:index:snapshot": "npx projen integ:index:snapshot",
+    "integ:index:watch": "npx projen integ:index:watch",
+    "integ:snapshot-all": "npx projen integ:snapshot-all",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
@@ -39,6 +46,7 @@
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "aws-cdk": "^2",
     "aws-cdk-lib": "2.1.0",
     "constructs": "10.0.5",
     "eslint": "^8",
@@ -55,6 +63,7 @@
     "projen": "^0.52.12",
     "standard-version": "^9",
     "ts-jest": "^27.1.3",
+    "ts-node": "^9",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
@@ -108,7 +117,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
+  "stability": "experimental",
   "jsii": {
     "outdir": "dist",
     "targets": {},

@@ -95,7 +95,7 @@
       "description": "Synthesize project files",
       "steps": [
         {
-          "exec": "node .projenrc.js"
+          "exec": "ts-node --project tsconfig.dev.json .projenrc.ts"
         }
       ]
     },
@@ -104,7 +104,19 @@
       "description": "Generate API.md from .jsii manifest",
       "steps": [
         {
-          "exec": "jsii-docgen"
+          "exec": "jsii-docgen -o API.md"
+        }
+      ]
+    },
+    "eject": {
+      "name": "eject",
+      "description": "Remove projen from the project",
+      "env": {
+        "PROJEN_EJECTING": "true"
+      },
+      "steps": [
+        {
+          "spawn": "default"
         }
       ]
     },
@@ -114,6 +126,78 @@
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
+        }
+      ]
+    },
+    "integ:index:assert": {
+      "name": "integ:index:assert",
+      "description": "assert the snapshot of integration test 'index'",
+      "steps": [
+        {
+          "exec": "[ -d \"test/index.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'index'. Run 'projen integ:index:deploy' to capture.\" && exit 1)"
+        },
+        {
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/index.integ.ts\" --no-version-reporting --no-path-metadata --no-asset-metadata -o test/.tmp/index.integ/synth.cdk.out > /dev/null"
+        },
+        {
+          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/index.integ.snapshot/ test/.tmp/index.integ/synth.cdk.out/"
+        }
+      ]
+    },
+    "integ:index:deploy": {
+      "name": "integ:index:deploy",
+      "description": "deploy integration test 'index' and capture snapshot",
+      "steps": [
+        {
+          "exec": "rm -fr test/.tmp/index.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/index.integ.ts\" --no-version-reporting --no-path-metadata --no-asset-metadata '**' --require-approval=never -o test/.tmp/index.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "rm -fr test/index.integ.snapshot"
+        },
+        {
+          "exec": "mv test/.tmp/index.integ/deploy.cdk.out test/index.integ.snapshot"
+        },
+        {
+          "spawn": "integ:index:destroy"
+        }
+      ]
+    },
+    "integ:index:destroy": {
+      "name": "integ:index:destroy",
+      "description": "destroy integration test 'index'",
+      "steps": [
+        {
+          "exec": "cdk destroy --app test/index.integ.snapshot '**' --no-version-reporting"
+        }
+      ]
+    },
+    "integ:index:snapshot": {
+      "name": "integ:index:snapshot",
+      "description": "update snapshot for integration test \"index\"",
+      "steps": [
+        {
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/index.integ.ts\" --no-version-reporting --no-path-metadata --no-asset-metadata -o test/index.integ.snapshot > /dev/null"
+        }
+      ]
+    },
+    "integ:index:watch": {
+      "name": "integ:index:watch",
+      "description": "watch integration test 'index' (without updating snapshots)",
+      "steps": [
+        {
+          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/index.integ.ts\" --no-version-reporting --no-path-metadata --no-asset-metadata '**' -o test/.tmp/index.integ/deploy.cdk.out"
+        }
+      ]
+    },
+    "integ:snapshot-all": {
+      "name": "integ:snapshot-all",
+      "description": "update snapshot for all integration tests",
+      "steps": [
+        {
+          "spawn": "integ:index:snapshot"
         }
       ]
     },
@@ -200,6 +284,9 @@
         },
         {
           "spawn": "eslint"
+        },
+        {
+          "spawn": "integ:index:assert"
         }
       ]
     },
@@ -262,7 +349,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-cdk constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

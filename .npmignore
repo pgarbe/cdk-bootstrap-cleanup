@@ -21,3 +21,6 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
+test/.tmp/index.integ/deploy.cdk.out
+test/.tmp/index.integ/synth.cdk.out
+test/index.integ.snapshot
