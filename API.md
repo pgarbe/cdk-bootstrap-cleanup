@@ -40,8 +40,67 @@ new BootstrapCleanup(scope: Construct, id: string, props: BootstrapCleanupProps)
 
 ---
 
+#### Methods <a name="Methods" id="Methods"></a>
 
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-bootstrap-cleanup.BootstrapCleanup.toString">toString</a></code> | Returns a string representation of this construct. |
 
+---
+
+##### `toString` <a name="toString" id="cdk-bootstrap-cleanup.BootstrapCleanup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-bootstrap-cleanup.BootstrapCleanup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-bootstrap-cleanup.BootstrapCleanup.isConstruct"></a>
+
+```typescript
+import { BootstrapCleanup } from 'cdk-bootstrap-cleanup'
+
+BootstrapCleanup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-bootstrap-cleanup.BootstrapCleanup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-bootstrap-cleanup.BootstrapCleanup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-bootstrap-cleanup.BootstrapCleanup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
 
 
 ## Structs <a name="Structs" id="Structs"></a>
@@ -115,8 +174,10 @@ new BootstrapCleanupAspect()
 ##### `visit` <a name="visit" id="cdk-bootstrap-cleanup.BootstrapCleanupAspect.visit"></a>
 
 ```typescript
-public visit(node: IConstruct)
+public visit(node: IConstruct): void
 ```
+
+All aspects can visit an IConstruct.
 
 ###### `node`<sup>Required</sup> <a name="node" id="cdk-bootstrap-cleanup.BootstrapCleanupAspect.visit.parameter.node"></a>
 
