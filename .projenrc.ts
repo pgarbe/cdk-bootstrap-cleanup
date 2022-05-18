@@ -9,8 +9,13 @@ const project = new pj.awscdk.AwsCdkConstructLibrary({
   author: 'Philipp Garbe',
   authorAddress: 'git@garbe.io',
 
-  cdkVersion: '2.1.0',
+  cdkVersion: '2.22.0',
   projenrcTs: true,
+});
+
+// Fix issue with prettier (https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/60310)
+project.package.addField('resolutions', {
+  '@types/prettier': '2.6.0',
 });
 
 project.synth();

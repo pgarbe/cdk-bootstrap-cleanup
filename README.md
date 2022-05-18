@@ -12,6 +12,7 @@ When the asset is not used anymore, also the custom resources gets deleted and t
 ## Open issues
 - [] Support permanent delete (at the moment only a delete marker is set)
 - [] Support cross-stack scenarios
+- [] custom resource should have log retention
 
 
 ## Other projects
