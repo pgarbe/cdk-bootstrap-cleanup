@@ -1,5 +1,5 @@
 {
-  "version": "17.0.0",
+  "version": "20.0.0",
   "files": {
     "67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016": {
       "source": {
@@ -8,35 +8,35 @@
       },
       "destinations": {
         "current_account-current_region": {
-          "bucketName": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}",
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
           "objectKey": "67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip",
-          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-qpersonio-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "68b4ffa1c39cb3733535725f85311791c09eab53b7ab8efa5152e68f8abdb005": {
+    "9ab58259097ac1249b4061ac6e823f78810b11c4c760a30324f6d012fe8e6440": {
       "source": {
-        "path": "asset.68b4ffa1c39cb3733535725f85311791c09eab53b7ab8efa5152e68f8abdb005",
+        "path": "asset.9ab58259097ac1249b4061ac6e823f78810b11c4c760a30324f6d012fe8e6440",
         "packaging": "zip"
       },
       "destinations": {
         "current_account-current_region": {
-          "bucketName": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "68b4ffa1c39cb3733535725f85311791c09eab53b7ab8efa5152e68f8abdb005.zip",
-          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-qpersonio-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "9ab58259097ac1249b4061ac6e823f78810b11c4c760a30324f6d012fe8e6440.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "7f831eb757bfff0fd44df6722b7f7d60ad70e69ebe2f5c2566efca9896389823": {
+    "1bfe7e4e8c84ad760cc41e5d94a0be67d7f422a673e627c0ff3fc3931761d37b": {
       "source": {
         "path": "MyStack.template.json",
         "packaging": "file"
       },
       "destinations": {
         "current_account-current_region": {
-          "bucketName": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "7f831eb757bfff0fd44df6722b7f7d60ad70e69ebe2f5c2566efca9896389823.json",
-          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-qpersonio-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "1bfe7e4e8c84ad760cc41e5d94a0be67d7f422a673e627c0ff3fc3931761d37b.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     }

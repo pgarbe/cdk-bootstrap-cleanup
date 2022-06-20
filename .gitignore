@@ -4,7 +4,6 @@
 !/.projen/deps.json
 !/.projen/files.json
 !/.github/workflows/pull-request-lint.yml
-!/.github/workflows/stale.yml
 !/package.json
 !/LICENSE
 !/.npmignore
@@ -40,6 +39,7 @@ junit.xml
 /dist/version.txt
 !/.github/workflows/release.yml
 !/.mergify.yml
+!/.github/workflows/upgrade-main.yml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.dev.json
@@ -50,6 +50,7 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+test/.tmp
 test/index.integ.snapshot/asset.*
 test/index.integ.snapshot/**/asset.*
 test/index.integ.snapshot/cdk.out
@@ -58,7 +59,3 @@ test/index.integ.snapshot/manifest.json
 test/index.integ.snapshot/**/manifest.json
 test/index.integ.snapshot/tree.json
 test/index.integ.snapshot/**/tree.json
-test/.tmp/index.integ/deploy.cdk.out
-test/.tmp/index.integ/synth.cdk.out
-!test/index.integ.snapshot
-!/.github/workflows/upgrade-main.yml

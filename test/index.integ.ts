@@ -4,9 +4,7 @@ import { BootstrapCleanupAspect } from '../src';
 
 
 const app = new cdk.App();
-const stack = new cdk.Stack(app, 'MyStack', {
-  synthesizer: new cdk.DefaultStackSynthesizer({ qualifier: 'qpersonio' }),
-});
+const stack = new cdk.Stack(app, 'MyStack');
 
 new cdk.aws_s3_assets.Asset(stack, 'S3Asset', {
   path: 'src',

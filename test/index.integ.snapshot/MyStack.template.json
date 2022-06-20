@@ -41,7 +41,7 @@
       [
        "{\"service\":\"STS\",\"action\":\"getCallerIdentity\",\"physicalResourceId\":{\"id\":\"",
        {
-        "Fn::Sub": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}"
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
        "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\"}}"
       ]
@@ -53,7 +53,7 @@
       [
        "{\"service\":\"STS\",\"action\":\"getCallerIdentity\",\"physicalResourceId\":{\"id\":\"",
        {
-        "Fn::Sub": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}"
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
        "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\"}}"
       ]
@@ -65,7 +65,7 @@
       [
        "{\"service\":\"S3\",\"action\":\"deleteObject\",\"parameters\":{\"Bucket\":\"",
        {
-        "Fn::Sub": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}"
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
        "\",\"Key\":\"67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\"}}"
       ]
@@ -115,9 +115,9 @@
    "Properties": {
     "Code": {
      "S3Bucket": {
-      "Fn::Sub": "cdk-qpersonio-assets-${AWS::AccountId}-${AWS::Region}"
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "68b4ffa1c39cb3733535725f85311791c09eab53b7ab8efa5152e68f8abdb005.zip"
+     "S3Key": "9ab58259097ac1249b4061ac6e823f78810b11c4c760a30324f6d012fe8e6440.zip"
     },
     "Role": {
      "Fn::GetAtt": [
@@ -137,7 +137,7 @@
  "Parameters": {
   "BootstrapVersion": {
    "Type": "AWS::SSM::Parameter::Value<String>",
-   "Default": "/cdk-bootstrap/qpersonio/version",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
    "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
   }
  },
