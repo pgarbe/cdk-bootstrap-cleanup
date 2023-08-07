@@ -9,7 +9,8 @@ const project = new pj.awscdk.AwsCdkConstructLibrary({
   author: 'Philipp Garbe',
   authorAddress: 'git@garbe.io',
 
-  cdkVersion: '2.26.0',
+  cdkVersion: '2.90.0',
+  jsiiVersion: '~5.0.0',
   projenrcTs: true,
 });
 
