@@ -1,31 +1,5 @@
 {
  "Resources": {
-  "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3": {
-   "Type": "AWS::IAM::Policy",
-   "Properties": {
-    "PolicyDocument": {
-     "Statement": [
-      {
-       "Action": "sts:GetCallerIdentity",
-       "Effect": "Allow",
-       "Resource": "*"
-      },
-      {
-       "Action": "s3:DeleteObject",
-       "Effect": "Allow",
-       "Resource": "*"
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "PolicyName": "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3",
-    "Roles": [
-     {
-      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
-     }
-    ]
-   }
-  },
   "S3AssetS3AssetcleanupCleanup50EC0451": {
    "Type": "Custom::AWS",
    "Properties": {
@@ -79,6 +53,32 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
   },
+  "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:GetCallerIdentity",
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": "s3:DeleteObject",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   }
+  },
   "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
    "Type": "AWS::IAM::Role",
    "Properties": {
@@ -117,16 +117,16 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "9ab58259097ac1249b4061ac6e823f78810b11c4c760a30324f6d012fe8e6440.zip"
+     "S3Key": "099a3112386fa620b3069790dcf92c8e64bb5341760a8b0a76bfa843f8ad41df.zip"
     },
+    "Handler": "index.handler",
     "Role": {
      "Fn::GetAtt": [
       "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
       "Arn"
      ]
     },
-    "Handler": "index.handler",
-    "Runtime": "nodejs12.x",
+    "Runtime": "nodejs18.x",
     "Timeout": 120
    },
    "DependsOn": [
