@@ -10,7 +10,7 @@ const project = new pj.awscdk.AwsCdkConstructLibrary({
   authorAddress: 'git@garbe.io',
 
   cdkVersion: '2.90.0',
-  jsiiVersion: '~5.0.0',
+  jsiiVersion: '~5.5.x',
   projenrcTs: true,
 });
 

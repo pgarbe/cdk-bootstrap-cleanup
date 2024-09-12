@@ -26,3 +26,4 @@ test/.tmp
 test/index.integ.snapshot
 /.gitattributes
 /.projenrc.ts
+/projenrc
