@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Defaults are correctly set 1`] = `
-{
-  "Parameters": {
-    "BootstrapVersion": {
+Object {
+  "Parameters": Object {
+    "BootstrapVersion": Object {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
-  "Resources": {
-    "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
-      "DependsOn": [
+  "Resources": Object {
+    "AWS679f53fac002430cb0da5b7982bd22872D164C4C": Object {
+      "DependsOn": Array [
         "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
       ],
-      "Properties": {
-        "Code": {
-          "S3Bucket": {
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
           "S3Key": "099a3112386fa620b3069790dcf92c8e64bb5341760a8b0a76bfa843f8ad41df.zip",
         },
         "Handler": "index.handler",
-        "Role": {
-          "Fn::GetAtt": [
+        "Role": Object {
+          "Fn::GetAtt": Array [
             "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
             "Arn",
           ],
@@ -33,27 +33,27 @@ exports[`Defaults are correctly set 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
-            {
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": {
+              "Principal": Object {
                 "Service": "lambda.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": [
-          {
-            "Fn::Join": [
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
               "",
-              [
+              Array [
                 "arn:",
-                {
+                Object {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -64,52 +64,52 @@ exports[`Defaults are correctly set 1`] = `
       },
       "Type": "AWS::IAM::Role",
     },
-    "S3AssetS3AssetcleanupCleanup50EC0451": {
+    "S3AssetS3AssetcleanupCleanup50EC0451": Object {
       "DeletionPolicy": "Delete",
-      "DependsOn": [
+      "DependsOn": Array [
         "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3",
       ],
-      "Properties": {
-        "Create": {
-          "Fn::Join": [
+      "Properties": Object {
+        "Create": Object {
+          "Fn::Join": Array [
             "",
-            [
-              "{"service":"STS","action":"getCallerIdentity","physicalResourceId":{"id":"",
-              {
+            Array [
+              "{\\"service\\":\\"STS\\",\\"action\\":\\"getCallerIdentity\\",\\"physicalResourceId\\":{\\"id\\":\\"",
+              Object {
                 "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
               },
-              "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip"}}",
+              "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\\"}}",
             ],
           ],
         },
-        "Delete": {
-          "Fn::Join": [
+        "Delete": Object {
+          "Fn::Join": Array [
             "",
-            [
-              "{"service":"S3","action":"deleteObject","parameters":{"Bucket":"",
-              {
+            Array [
+              "{\\"service\\":\\"S3\\",\\"action\\":\\"deleteObject\\",\\"parameters\\":{\\"Bucket\\":\\"",
+              Object {
                 "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
               },
-              "","Key":"67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip"}}",
+              "\\",\\"Key\\":\\"67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\\"}}",
             ],
           ],
         },
         "InstallLatestAwsSdk": false,
-        "ServiceToken": {
-          "Fn::GetAtt": [
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
             "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
             "Arn",
           ],
         },
-        "Update": {
-          "Fn::Join": [
+        "Update": Object {
+          "Fn::Join": Array [
             "",
-            [
-              "{"service":"STS","action":"getCallerIdentity","physicalResourceId":{"id":"",
-              {
+            Array [
+              "{\\"service\\":\\"STS\\",\\"action\\":\\"getCallerIdentity\\",\\"physicalResourceId\\":{\\"id\\":\\"",
+              Object {
                 "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
               },
-              "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip"}}",
+              "/67112e5ff5d3625c22aa8596601f13df219842137f67b26be9ff15dd67ee2016.zip\\"}}",
             ],
           ],
         },
@@ -117,16 +117,16 @@ exports[`Defaults are correctly set 1`] = `
       "Type": "Custom::AWS",
       "UpdateReplacePolicy": "Delete",
     },
-    "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3": {
-      "Properties": {
-        "PolicyDocument": {
-          "Statement": [
-            {
+    "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
               "Action": "sts:GetCallerIdentity",
               "Effect": "Allow",
               "Resource": "*",
             },
-            {
+            Object {
               "Action": "s3:DeleteObject",
               "Effect": "Allow",
               "Resource": "*",
@@ -135,8 +135,8 @@ exports[`Defaults are correctly set 1`] = `
           "Version": "2012-10-17",
         },
         "PolicyName": "S3AssetS3AssetcleanupCleanupCustomResourcePolicyA16CEEE3",
-        "Roles": [
-          {
+        "Roles": Array [
+          Object {
             "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
           },
         ],
@@ -144,22 +144,22 @@ exports[`Defaults are correctly set 1`] = `
       "Type": "AWS::IAM::Policy",
     },
   },
-  "Rules": {
-    "CheckBootstrapVersion": {
-      "Assertions": [
-        {
-          "Assert": {
-            "Fn::Not": [
-              {
-                "Fn::Contains": [
-                  [
+  "Rules": Object {
+    "CheckBootstrapVersion": Object {
+      "Assertions": Array [
+        Object {
+          "Assert": Object {
+            "Fn::Not": Array [
+              Object {
+                "Fn::Contains": Array [
+                  Array [
                     "1",
                     "2",
                     "3",
                     "4",
                     "5",
                   ],
-                  {
+                  Object {
                     "Ref": "BootstrapVersion",
                   },
                 ],
